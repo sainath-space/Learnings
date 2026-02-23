@@ -1,0 +1,22 @@
+EIP 
+
+Specification Pattern
+Unit of work
+CSSExceptionHandler
+CSSInvalidStateHandler
+CSS Controller Base
+
+ELV Next
+
+Datadog Logging
+Datadog Agent
+HealthChecks - CustomHealthChecks
+Specflow
+
+Outside
+Database interceptors for entity framework (intercept for unit of work savechanges method)
+outbox pattern with interceptors - https://www.youtube.com/watch?v=XALvnX7MPeo
+
+
+
+
