@@ -1,0 +1,287 @@
+main.tf file 
+terraform provider - hashicorp
+terraform version
+backend for storing the state file 
+
+resource "resource_type" "resourcename"{
+parameters
+}
+
+mention the credentials in azurerm - for that create the service principle - it will have client_id,client_secret,tenant_id,subscription_id
+
+terraform init
+terraform validate
+terraform plan
+terraform apply
+
+init->validate->plan->apply 
+
+
+terraform destroy
+
+terraform state management - tfstate file 
+
+backend azurerm{
+ storage account , 
+ container name,
+ key = "prod.terraform.state"
+}
+
+variables -> env variables , tfvars file - priorit is env variables and then tfvars 
+
+each terraform file for each resource type , varaibles , backend , input file and output file 
+
+we can set the dependency to run the resources in a particular order 
+
+provisioning multiple resources 
+interaction from child to root is through out put variables
+
+terraform workspace - for running the same code in different environments
+
+
+-------------------------------------------------------------------------------------------
+
+Express route , the primary goal is secury , high speed and reliable connectivity between on premis data centers , azure cloud services , all the traffic flows through the private network provided by telecom providers and not over the internet .
+
+Azure load balancer - internal/external traffic distribution for VMs - layer 4
+Internal microservices 
+
+Azure Application Gateway - http load balancer  - 
+URL routing , cookie based affinity , Web Application Firewall 
+
+web applications 
+
+Azure front door 
+Global http load balancing , CDN integration , SSL Offloading , Web Application Firewall security 
+
+Global Saas applications , multi region failover , performance optimization 
+
+
+Within a region , we have multiple zones 
+we can have multi region deployment as well 
+
+Azure front door - AKS cluster (EAST US) , AKS cluster (Central US)
+
+-----------------------------------------------------------------------
+
+Azure security center 
+
+Microsoft defender - Handles threat protection for resources , workload protection , protects individual workloads
+Microsft sentinel - security monitoring & incident management system , it acts as SEIM (security event and incident management) , SOAR (security orchestration , automation and response )
+
+Defender --- can be used for secure score , recommendations , just in time VM access , regulatory compliance , environment settings 
+we need to assign a subscription to a policy , then we get a secure scope and recommendations 
+we can drill down the recommendations to go to the resources and see , what are the things that are missing 
+we can also apply the policies targeting the specific compliance such as , ISO 27001 , PCI DSS 3.2.1 , SOC TSP 
+
+
+Microsoft sentinel --- Security Event and Incident Management SEIM , Security Orchestration and Automated Response (SOAR) , 
+Sits on top of Microsoft log analytics workspace -  it stores security logs and signals 
+It can get information from Azure resources , ON premises , networking , identity , SAAS 
+It has multiple data connectors
+It uses intelligence , like machine learning 
+We can see where is the threat coming for etc...
+Hunting in the Microsoft sentinel is where we want to look for some issues , queries 
+Threat intelligence 
+There are some built in automation , rules which we can configure , automate incident configuration 
+I am seeing some security threat from this IP address , SOAR - go and block the IP address 
+
+------------------------------------------------------------------------------------
+Azure policies - for managing complaint , managing azure environment 
+Correct location , correct SKU select 
+
+Due to data related security , data is not allowed to move outside the Germany , for example 
+Intitiative to bundle a group of policies together 
+Policy we can apply subscription level , management level , we can also add some exclusion , so that we can exclude some resource groups 
+
+Effect of an policy , can be deny - audit - append - modify 
+scope can be management group , subscription , resource groups and resources 
+
+------------------------------------------------------------------------------------
+Azure Dev Ops 
+
+Create a service pricinple in azure and use it in the pipeline 
+we can create a self hosted agent in VM scale set 
+
+------------------------------------------------------------------------------------
+service principle vs managed identity 
+
+No real user - may be application to upload the images - service principle - without a user 
+Azure tenant id , client id , client secret 
+create a app registration 
+add role assignment in AD after we create teh service principle 
+
+For a azure resource getting access to another resource , we use managed identity 
+system assigned and user assigned managed identity 
+
+Go to the VM , and select identity - and select system assigned managed identity 
+Go to the target resource , add the role assignment , and grant VM assigned managed identity 
+
+system assigned identity - it is tightly coupled with the VM 
+user assigned identity - it is independent of the resource life cycle 
+with user assigned identity we can associate it with multiple VM's
+
+user assigned , we are responsible for the life cycle management of the identity 
+------------------------------------------------------------------------------------
+Azure key vault 
+
+Azure key vault , we use to store secrets - like database connecton string or passwords 
+Centralized management - manage secrets , keys , certificate in one place 
+
+We can mention the vault url - "https://techdudesdemovault.vault.azure.net/" in the config file of the web api , 
+
+var keyVaultUri = builder.Configuration["KeyVault:VaultUri"]
+var secretClient = new SecretClient()
+builder.Services.AddSingleton(secretClient)
+
+public DatabaseController(SecretClient secreteClient)
+_secretClient.GetSecretAsync("DbConnectionString")
+
+Azure key vault - azure pipelines 
+
+we can also add a step in dev/ops to connect to azure key vault , thus giving the pipeline access to the secrets 
+$(connectionstring) - we can get it from key vault 
+
+
+------------------------------------------------------------------------------------------
+
+Powershell scripts is an easy way to accomplish the things , declare variables and add import command lets and use it for execution 
+
+
+------------------------------------------------------------------------------------------
+
+Micro services 
+ database per design pattern 
+-------------
+SAGA Pattern 
+ choreography
+ Orchestrator
+
+It is like a dance 
+In choreography , there is no central coordinator , each service publishes event and reacts to event from other services 
+Order service -> create order -> OrderCreated -> 
+Payment services -> OrderCreated -> publishes payment completed
+Inventory service -> listens to payment completed -> publishes stockreserved 
+
+If any sequence breaks , it publishes compensating commands 
+
+Orcehstration 
+In orchestration , a central orchestration service controls the workflow 
+Saga Orchestrator -> calls order service , create order -> calls payment service , charge card -> calls inventory service , reserve stock 
+
+choreography , few microservices , less complex scenarios , event driven architecture 
+orchestration , complex workflows , needs centralized control , need monitoring and retry logic 
+
+For simple event driven architecture , i would go with choreography , where as for complex scenarios , we will be going with the orchestration pattern 
+-----------------
+CQRS design pattern 
+Command and query segregation 
+
+product query service :  /GET  - FetchProducts
+product command service : /POST , /PUT ,/DELETE  
+
+example flipkar sale , during the sale days - searches are more and creates are less 
+
+separates writes from reads , independent scaling , mostly used for ecommerce 
+read side can have materialized views 
+data are synchronized based on teh event , write produces an event which is consumed by read
+write can be relational while reads can be elastic 
+
+-----------------
+Transaction outbox pattern 
+
+Solves the problem , when the data is to be written to the database and also published for the consumer to pick up the same message . Like data is committed to DB but publishing fail 
+In this pattern , data is written to the related table and also to the outbox table , and the data is synched by a separate background job , which picks up the data from the outbox table , and changes the sync status 
+
+-----------------
+
+Event sourcing design pattern 
+
+Instead of storing the final state , it stores the event , and final state is derived by deriving by replaying the events , it is mostly used for high audit API's
+
+Order created , confirmed , shipped n delivered 
+also like bankin , 200 deposited , 100 withdrawn , 300 deposited etc...
+
+better to use no-sql for scaling , they can also be stored in message broker like Kafka , event hub , Rabbit MQ etc
+----------------
+Aggregator pattern 
+
+Aggregator service - instead of the UI calling multiple services , and waiting , it can call an aggregator service , 
+The aggregator service in turn will call the services and aggregates information for UI consumption 
+
+Benefits , simplified UI , optimized performance (parallel api calls) , better resilience , security enhancements 
+---------------
+API Gateway - similar to API management - request comes to gateway and then it goes to user service , product service , order service , payment service 
+
+---------------
+
+Backend for Frontend (BFF)
+
+It is a custom API that sits in between , fronte end App and back end microservices . Instead of front end calling all the different microservices , it  makes a single call to the BFF service , the BFF structures and formats the response expected by the front end .
+
+----------------
+Circuit Breaker Pattern 
+
+To prevent cascading failure , this particular pattern is implemented , with out which , if the payment services is being called , and it does not give any response , without circuit breaker pattern , system would crash , with circuit breaker pattern , it would block the request , resulting in the system continue to work.
+
+.net polly 
+
+--------------------
+Strangular pattern 
+
+It is a design pattern used to gradually migrate or modernize legacy system by relacing parts of it with new services over time .
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SOLID principles 
+
+S - Single responsibility principle - it should have only one responsibility - ex Invoice calls - add invoice , delete invoice one method , 
+generate report and emailreport - should be a different class . generate report - part of report class , email report - part of email class 
+
+O - Open close principle - a class should be open for extenstion and closed for modification , 
+payment processor should be a class with virtual method - process payment
+creditcardpaymentprocess - can in herit from payment and override the abstract payment process method 
+paypalpaymentprocess - can inherit from payment and override the abstract payment process method 
+
+L - Liskov substitution principle - LSP is a concept that guarantees the smooth substitution of objects of derived classes for objects of their base classes . The objects of derived class should be interchangeable with the base class
+
+car , electric car inherits car : car has method as startengine and stopengine , which electric car may not need it .
+so car should interit interface : Vechile , IEnginePowered  , where as electric car inherits vechile only 
+
+vechicle car = new Car() & vechicel electricCar = new Electriccar()
+
+I - interface segregation principle - instead of haveing one interface with too many methods , segregate them to multiple interfaces , so that it is better to inherit only the interfaces , whose methods you want to implement and not all 
+
+
+D - Dependency inversion principle (DIP) - It is mostly talking about dependency injection , where the architecture is loosely coupled , high level modules depend on low level modules , but the not the reverse 
+
+UserController(IDataStorage dataStorage)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+MongoDB
+
+Favor embedding , unless there is a compelling reason not to 
+Need to access objects on its own , is a compelling reason not to embed it 
+Avoid joins and lookup if possible , 
+Arrays should not grow bound , if there are more than couple of hundred documents on many side don't embed them 
+
+index , single field index & multifield index (composite index)
+MongoDbCompass is used to connect to Atlas Mongo DB 
+multi key index , is used to index the values stored in an array 
+
+table is called collection in the mongo DB 
+
+mongodb is capable of scaling horizontally , with the sharding distributing large datasets across different data collection with  the help of shardkey 
+CAP Theorem (Conssitency , Avalilability , Parititio tolerance) - at a time only 2 are possible 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+clean architecture 
+
+
+-- what does configure method went off in .net core 
+-- what are different types of dependency injection 
+-- what is there in latest .net core app , start point 
+-- flow of the request with middleware 
+

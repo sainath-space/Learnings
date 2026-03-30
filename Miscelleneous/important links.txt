@@ -1,0 +1,3 @@
+CAP theorem
+https://stackoverflow.com/questions/36404765/why-isnt-rdbms-partition-tolerant-in-cap-theorem-and-why-is-it-available
+

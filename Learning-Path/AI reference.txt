@@ -1,0 +1,15 @@
+https://www.youtube.com/shorts/U6OMc9AXhbo
+
+1) Cloud native AI services
+2) LLMS being user IBM Granite , AWS LLM's , Open source LLM's
+3) Containerization 
+4) Framework Langchain/Langrow/watchson orchestrate
+5) Obserbility framework Instara 
+
+
+Vector databases 
+Prompt engineering with guardrails
+MLOPS/LLOPS pipeline
+RAG systems
+
+

@@ -1,0 +1,82 @@
+1. Azure Compute Services
+Azure Virtual Machines (VMs): Scalable and configurable virtual servers.
+Azure App Services: Platform as a Service (PaaS) for hosting web apps, APIs, and mobile backends.
+Azure Functions: Serverless computing for event-driven executions.
+Azure Kubernetes Service (AKS): Managed Kubernetes for containerized applications.
+Azure Batch: Job scheduling service for parallel and large-scale batch processing.
+
+2. Azure Storage Services
+Azure Blob Storage: Object storage for unstructured data like images, videos, and documents.
+Azure File Storage: Managed file shares that can be accessed using the SMB protocol.
+Azure Disk Storage: High-performance disks attached to Azure VMs.
+Azure Queue Storage: Messaging service for building scalable applications.
+Azure Data Lake Storage: Storage for big data analytics, optimized for large-scale data sets.
+
+3. Azure Networking
+Azure Virtual Network (VNet): Creates isolated networks in the Azure cloud.
+Azure Load Balancer: Distributes incoming network traffic across multiple servers.
+Azure Application Gateway: Web traffic load balancer with integrated web application firewall (WAF).
+Azure VPN Gateway: Secure connection between on-premises networks and Azure.
+Azure DNS: Provides domain name resolution for Azure resources.
+Azure Front Door: Global, scalable entry point for web applications with load balancing and security.
+
+4. Azure Identity and Access Management (IAM)
+Azure Active Directory (Azure AD): Identity and access management service.
+Role-Based Access Control (RBAC): Controls access to resources based on user roles.
+Azure AD B2C/B2B: Identity management for external users and organizations.
+Multi-Factor Authentication (MFA): Adds additional layers of security to user sign-ins.
+
+5. Azure Databases
+Azure SQL Database: Fully managed relational database service for SQL Server.
+Azure Cosmos DB: Globally distributed, multi-model NoSQL database service.
+Azure Database for MySQL/PostgreSQL: Managed versions of MySQL and PostgreSQL.
+Azure SQL Managed Instance: Managed SQL Server instances in Azure, ideal for migrations.
+Azure Database Migration Service: Simplifies database migration to Azure.
+
+6. Azure AI and Machine Learning
+Azure Machine Learning: Service to build, train, and deploy machine learning models.
+Azure Cognitive Services: Pre-built AI models for vision, speech, language, and decision-making.
+Azure Bot Service: Platform for developing intelligent bots.
+Azure Databricks: Fast, easy, and collaborative Apache Spark-based analytics service.
+
+7. Azure DevOps and Developer Tools
+Azure DevOps: Continuous integration and delivery tool for building, testing, and deploying code.
+Azure DevTest Labs: Provides environments for testing and developing applications.
+Azure Repos: Source control management (SCM) for Git repositories.
+Azure Pipelines: Continuous integration and delivery pipelines.
+
+8. Azure Security and Monitoring
+Azure Security Center: Provides unified security management and threat protection.
+Azure Sentinel: Cloud-native Security Information and Event Management (SIEM) tool.
+Azure Key Vault: Stores and manages secrets, encryption keys, and certificates.
+Azure Policy: Defines and enforces rules to ensure resource compliance.
+Azure Monitor: Monitors applications and infrastructure with built-in telemetry.
+Azure Log Analytics: Collects and analyzes log data from Azure resources.
+
+9. Azure Governance and Compliance
+Azure Blueprints: Templates for deploying Azure resources following compliance and security best practices.
+Azure Cost Management: Helps monitor and control Azure spending.
+Azure Resource Manager (ARM): Enables deployment and management of Azure resources via templates.
+Azure Advisor: Personalized best practices and recommendations for cost, security, performance, and reliability.
+
+10. Azure Data and Analytics
+Azure Data Factory: Cloud-based data integration service to orchestrate and automate data pipelines.
+Azure Synapse Analytics: Integrated analytics service for big data and data warehousing.
+Azure HDInsight: Managed Apache Hadoop and Spark service for big data analytics.
+Azure Stream Analytics: Real-time analytics on streaming data from devices, sensors, and logs.
+Azure Data Explorer (ADX): Fast and scalable data exploration service for log and telemetry data.
+
+11. Azure IoT (Internet of Things)
+Azure IoT Hub: Central message hub for bi-directional communication between IoT applications and devices.
+Azure IoT Central: Fully managed IoT solution for rapid deployment.
+Azure Sphere: End-to-end security solution for IoT devices.
+Azure Digital Twins: Creates a digital representation of physical environments for monitoring and simulation.
+
+12. Azure Migration and Backup
+Azure Site Recovery: Provides disaster recovery services for both on-premises and Azure workloads.
+Azure Backup: Cloud-based backup solution for Azure VMs and on-premises servers.
+Azure Migrate: Assessment and migration tool to move on-premises workloads to Azure.
+
+13. Hybrid and Multi-Cloud
+Azure Arc: Extends Azure management to any infrastructure (on-premises, multi-cloud, and edge).
+Azure Stack: Extends Azure to your data center to run hybrid applications.
