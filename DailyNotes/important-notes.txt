@@ -1,0 +1,77 @@
+terraform
+
+-----------------------------------------------
+git commands 
+
+git remote set-url origin https://sainath-space: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@github.com/sainath-space/Learnings.git
+
+git remote set-url origin https://sainath-space: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@github.com/sainath-space/project-avenu.git
+
+git remote set-url origin https://sainath-space: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@github.com/sainath-space/PR-JHA.git
+
+git add --all
+git commit -m "commit"
+
+git push 
+
+----------------------------------------------
+
+What went well 
+
+Salt & Hash completed in this sprint 
+PDFtron spike is completed 
+Oracle intial local setup is done 
+EU CRA Jignesh approval 
+
+What could have been better 
+SRE team ,any changes we need to get the info 
+ 
+------------------------------------------------
+
+Defect RCA
+
+Bug Id , Bug Details , Defect Id , RCA , Resolution , Preventive Action
+
+
+-------------------------------------------------
+Login Creds
+
+EID: H633688
+Email: Sainath.Bommalakunta@Honeywell.com
+Password : 0BZ{;qyO4M 
+
+-------------------------------------------------
+
+Ness Confluence Space
+
+https://start.atlassian.com
+https://ness-nde.atlassian.net/wiki/spaces/HSNI/overview
+https://ness-nde.atlassian.net/wiki/spaces/HSNI/pages/4861427713/Internal+Deliverables+Tracker
+
+--------------------------------------------------
+
+Dev estimation template 
+
+https://nesstech.sharepoint.com/:x:/r/teams/SpartaInternalCoreTeam/Shared%20Documents/Sparta%20General%20Discussions/Dev_QA_Estimation_Template.xlsx?d=wdda9d1f5382a4daebaff96f48341c511&csf=1&web=1&e=sQOXkz
+
+---------------------------------------------------
+
+time sheet codes
+
+X17023111 - 8
+X17023121 - 1
+
+--------------------------------------------------
+Leaves
+
+https://nesstech-my.sharepoint.com/:x:/r/personal/p7113629_ness_com/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B0de0b60a-ff40-4d10-9a51-69b6ec031739%7D&wdOrigin=TEAMS-MAGLEV.undefined_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1756119003057&web=1
+
+
+https://nesstech-my.sharepoint.com/:x:/g/personal/p7164753_ness_com/Edgx-Q3WnuNFn5Zb4lBa4u8BDIoV2xrxwwU6Za7rNfaetQ?e=oILqAD
+
+
+Honeywell customer care : 000 800 050 1866
+
+Senthil - 9980812051
+
+

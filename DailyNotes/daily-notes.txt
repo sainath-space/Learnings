@@ -1,0 +1,60 @@
+Ness - Shivadarshan 
+--------------------------------------------------
+GitHub action 
+Basic GCP  
+Resume specifically for project/tech manager
+Juned end to end deployment of Kubernetes **
+
+
+Angular - basics , interview questions , project structure
+-----------------------------------------------------------
+Juned 
+
+spinning up azure resources 
+docker - ACR 
+
+CI - ACR
+CD - AKS 
+
+rediness probe
+
+taint for node pool 
+template in yml
+
+ci/cd pipeline 
+-------------------------------------------------------------
+
+
+What is VPC 
+
+------------------------------------------------------------
+
+
+Little more about helm charts - to avoid redundancy for deployment of each service
+How the Kubernetes deployed to AKS 
+Ingress - type - Azure-Application-Gateway is that default installed
+ASG/NSG 
+How AKS - intergrated with Azure Monitor , Active Directory , Container Registry 
+In General AKS 
+System Node pool 
+AKS Networking Models Azure CNI , KUbenet - which one to select and where to select 
+Horizontal pod scaling/vertical pod scaler - sysntax / what can we do for nodes?
+
+Monitoring in AKS - azure monitor 
+service mesh 
+Private AKS cluster 
+rolling upgrade - systax 
+
+how to keep Azure App service private and access it in APIM 
+
+
+What is there in Azure CI/CD pipelines 
+
+Automated testing in Azure CI/CD pipelines 
+pipeline for deploying the azure resources
+
+what is app service plan 
+Authorization in micro service - Azure AD B2C 
+
+Disaster recovery 
+Logic app in detail 
