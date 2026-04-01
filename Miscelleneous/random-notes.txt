@@ -1,263 +1,3 @@
-
-we can use resource locks - to prevent accidental deletion 
-
-user assigned - create a user assigned managed identity
-
-User assigned - has to be created separately 
-System assigned - created as part of azure resource , shares life cycle of the resource
-
-Event grid - it is a service that allows you to manage event routing 
-Event grid is ideal for event driven architecture
-
-Event sources and event handlers 
-----------------------------------------------------------------------------------
-NSG at the subnet level , after NSG it goes through ASG (Application security group) - grouping of VM's
-
-Privilege Identity Management - enable just in time privilege access , approval for granting the user access , auditing of user access and removing the access which are not needed 
-
-ASG is applying rules at scale , we can add ASG within NSG 
-
-MCSB - Microsoft cloud security benchmark - gives some guidelines on security aspect 
-
-Data at rest is automatically encrypted 
-VPN gateway to communicate between VNET's , it uses the backbone of Azure , Private Communication
-
-Site to Site VPN - communicate between VNet to on premise network 
-Azure Express Route - provides private connection between on premises and Microsoft cloud services 
-
-private end point - it is at the instance level , it brings the service to be part of virtual network 
-service end point - is per service , like storage service etc , traffic leave virtual network , free , azure backbone network 
-
-Application gateway - URL based routing , path based routing , session affinity , secure socket layer (SSL) , multiple site hosting , rewrite http header , 
-Azure front door - url and path based , location based routing , url rewriting , CDN , caching , WAF , 
-
-Azure firewall - network level 
-Web Application Firewall - application level 
-
-Plan and implement web application firewall - WAF 
-
-Azure DDos - Protection can be applied to public IP addresses associated with resources deployed in Azure Virtual Network 
-
-Defence in depth - protection at each layer , so that if security at one layer is compromised , the impact is reduced 
-
-Management groups - Platform -> Identity , Management , Connectivity 
-Landging zones ->  Applications 
-
-Microsoft defender -> it gets the security score and also suggests some recommendations 
-We can also assign some built in policies to the subscription 
-check the controls and address the remediation 
-Defender for storage - detects threats , prevents malicious uploads , data exfiltration and corruption 
-
-Monitor - cpu usage , memory utilization , network in , network out
-set alerts 
-
-Kubernetes - cluster IP - service accessible internally within the cluster , node port for dev testing , load balancer - expose the service externally to public internet 
-
-az group create
-az aks create 
-az account set --subscription guid
-az aks get-credentials 
-
-containerd is the default container runtime for AKS
------------------------------------------------------------------------------------------------
-Azure Web Apps - small to medium APPS 
-AKS - large scale systems , many micosevices 
-
-AKS - can save cost around 30% cheaper 
-user principle - represents human user 
-service principle - security identity used by applications/services 
-single tenant/single directory for most organizations
-
-management groups - subscriptions - resource groups 
-
-Microsoft Entra connect - synchronize the accounts from on-prem to cloud entra id
-AD federation service - don't want to synchronize , but pass through authentication 
-
-------------------------------------------------------------------------------
-Azure Analysis Service - powerful tabular data models - which can be sent to power BI 
-Azure Data Factory - ETL 
-Azure Data Lake Storage - petabytes of structured/semi structured data 
-Azure data bricks - big data processing 
-Azure stream analytics - real time processing 
-Azure synapse analytics - enterprise scale , integration and visualizing massive datasets 
-Event hubs - real time data streaming platform , million of events - real time event ingestion - IoT telemetry , click streams
-Azure Power BI - business intelligence & data visualization platform 
---------------------------------------------------------------------------------------
-
-Azure landing zones : It is a well prepared environment , where we land our azure applications 
-It includes all foundational services 
-Services for security , governance , networking , scalability 
-
-Subscription driven , Governance policy is done at subscription level 
-
-Cloud ready environment 
-
-Azure landing zones help customers setup this azure environment for scale , security 
-, governance , networking and identity 
-
-Iterative implementation - foundational blueprint , migration blueprint , terraform modules 
-rich initial implementation 
-
-
-----------------------------------------------------------------------------------------
-
-DevOps 
-
-Pipeline - Stage (build , deploy) -> Multiples Jobs -> Each Job (Task )
-
-blue green deployments 
-
-terraform - init , plan , deploy 
-pipeline for deploying the azure resources using terraform 
-
-pipelines are run on Microsoft agents default , we can create our own agent using virtual machine scale sets 
-
-----------------------------------------------------------------------------------
-API Gateway - operation level / api level / product level / global level - policies can be applied at any level 
-
-Policies - transformation , inbound and outbound processing , xml 
-inbound , outbound , backend 
-
-rate limit , cache , authentication , authorization , transformation - request,respons , cross domain , content validation , 
-
-AD B2C - advanced customizations - user flows , custom policies , MFA
-AD B2C - API connectors , to perform custom logic before the sign in happens
-Create a tenant , register an application , and add user flow to that Azure AD B2C
-
-ADF - azure data factory - ETL transformation , define data set , linked service 
-Data flow - we can do multiple operations , like join , select , output , filtered , branch out and create separate flow 
-
-ADF - Pipelines , Activiites , linked service , data source , data flow 
-monitoring & logging is also available 
-schedule pipeline to trigger at specific interval 
-
------------------------------------------------------------------------------------
-Docker - base image , set working directory , copy command , build command, run command , expose command
-we need Kubernetes manifest file - converted to helm charts are finally deployed 
-
-to get context of azure cluster - azure cluster az aks git-credentials --resource-group --name three-tier
-
-helm charts - chart.yml
-
-control plane - API server , Schedule , ETCD , Controller Manager  
-worker nodes - Kubeproxy , Kubelet , virtual machies 
-
-pod smalles deployable unit 
-one container most of the cases , but sidecar container - logging , shared network and shared volume
-
-GPU node pool - deep learning/AI/ML workloads
-system/user node pool 
-
-Azure CNI - better enterprise integration , IPs from azure vnet
-Kubenet - internal cluster IPs , 
-
-Availability - Pods are deployed on availability zones 
-Helm is package manager for Kubernetes - templated deployment , versions , easy rollbacks
-
-Azure monitor --> log analytics 
-service mesh manages communication between services 
-
-expose Kubernetes API only inside a VNET 
-upgrade strategy , rolling upgrade 
-
-cost optimization - autoscaler , right VM , schedule scaling , separate node pools 
-storage class - azure disk , files , blob storage 
-
-deployment par of code , and deploy in CD 
-
-
-
-
-------------------------------------------------------------------------------------------------------
-Angular
-Angular how to import rxjs/other libraries 
-Angular project structure and files - angular.json 
-Change in module approach in latest Angular
-Self containing component
-MSAL Library
-How data is maintained - local storage / Store 
-
-
-install node , npm install -global angular.cli
-ng new projectname
-ng serve
-
-component - component.ts, component.html 
-
-import {component} from @angular/core
-
-main.ts - sets AppModule as bootstrap module 
-
-@NgModule - AppModule - declarations - components , imports - other modules , providers [] services, bootstrap Appcomponent 
-
-ng generate component
-
-directive - component directive , attribute directive (ngStyle , ngClass) , structural directive (ngIf , ngFor , ngSwitch)
-passing values from parent component to child component 
-
-@Input()
-<child-component *ngFor="Let prod of products" [product]="prod" ></child-component>
-
-@Output()
-child to parent - eventemitter 
-eventemitter in child component , event is captured in parent component 
-
-Another alternative is services , to pass the data between components 
-
-template reference variable #searchInput , refer directly as (searchInput)
-
-
-getting matching element @ViewChild , ViewChildren , 
-templating , ng-Template , to insert the template in a div
-
-ngContainer - to insert template without div 
-
-contentChild , contentChildren - to get reference of elements
- 
-component initialization - life cycle hooks 
-
-ngOnchange , ngInit , ngDoCheck , ngAfterContentInit , ngAfterContentChecked , ngAfterViewInit , ngAfterViewChecked , ngDestroy 
-
-ngOnChange - when ever changes happen , input property changes , DOM event happen , timer events happen , http request is made
-ngOnInit - after it creates the component , and updates its input properties , after ngOnchanges , it is called only first time and not called later on
-ngDoCheck - this is triggered even if there is no change in input properties , just a button click and still no changes to DOM , it is called , it is called after ngOnchange and ngOnInit
-
-ngAfterContentInit - after component projected content has been fully initialized
-ngAfterContentChecked - is called during every change detection cycle , after angular has finished initializing and checking projected content , everytime and input value in child project content is changed 
-
-ngAfterViewInit - It is called after components view template and its child components view templates are fully initialized , it is called after @ViewChild and @ViewChildren decorators are being raised
-ngAfterViewChecked - Similar to above , but it is called everytime during change detection cycle 
-
-ngOnDestroy - just before the component or directive is destroyed 
-renderer2 - wrapper over the native elements to access elements
-
-custom attributes - Hostlisterner , Hostbinding when developing the directives
-
-services in Angular - 
-It is injected in component via providers 
-
-we can have eventemitter in a service , one component we can raise , other component we can subscribe to the same
-
-Subject is multicast , Observable is unicast 
-
-promise vs observable (RxJs)
-
-Routing - imports of AppModule - RouterModule.forRoot(routes) - where routes is the const
-this.router.navitate()
-
-Separate module for router , and import that in app.Module
-
-Route gaurd - can be used to control whether the user can navigate to or away from a route based on a given condition 
-canactivate - if the user is authorized or not , canactivatechild - protects child from unautorized access
-candeactivate - if we want to check if or alert for the changes done , resolve route guard - navigate only after the data is available
-	
-templateDrivenForms - ngForm , ngSubmit , ngModel , #registrationform = "ngForm", this.form.value.lastname , touched , dirty , ngModelGroup
-reactiveForms - formGroup , formControlName , formArray 
-
-HttpClientModule 
-Interceptors - to intercept - for logging or adding custom headers
-
--------------------------------------------------------------------------------------------------------------------
 main.tf file 
 terraform provider - hashicorp
 terraform version
@@ -326,5 +66,222 @@ Azure front door - AKS cluster (EAST US) , AKS cluster (Central US)
 
 Azure security center 
 
-Microsoft defender - Handles threat protection for resources , workload protection , 
+Microsoft defender - Handles threat protection for resources , workload protection , protects individual workloads
+Microsft sentinel - security monitoring & incident management system , it acts as SEIM (security event and incident management) , SOAR (security orchestration , automation and response )
+
+Defender --- can be used for secure score , recommendations , just in time VM access , regulatory compliance , environment settings 
+we need to assign a subscription to a policy , then we get a secure scope and recommendations 
+we can drill down the recommendations to go to the resources and see , what are the things that are missing 
+we can also apply the policies targeting the specific compliance such as , ISO 27001 , PCI DSS 3.2.1 , SOC TSP 
+
+
+Microsoft sentinel --- Security Event and Incident Management SEIM , Security Orchestration and Automated Response (SOAR) , 
+Sits on top of Microsoft log analytics workspace -  it stores security logs and signals 
+It can get information from Azure resources , ON premises , networking , identity , SAAS 
+It has multiple data connectors
+It uses intelligence , like machine learning 
+We can see where is the threat coming for etc...
+Hunting in the Microsoft sentinel is where we want to look for some issues , queries 
+Threat intelligence 
+There are some built in automation , rules which we can configure , automate incident configuration 
+I am seeing some security threat from this IP address , SOAR - go and block the IP address 
+
+------------------------------------------------------------------------------------
+Azure policies - for managing complaint , managing azure environment 
+Correct location , correct SKU select 
+
+Due to data related security , data is not allowed to move outside the Germany , for example 
+Intitiative to bundle a group of policies together 
+Policy we can apply subscription level , management level , we can also add some exclusion , so that we can exclude some resource groups 
+
+Effect of an policy , can be deny - audit - append - modify 
+scope can be management group , subscription , resource groups and resources 
+
+------------------------------------------------------------------------------------
+Azure Dev Ops 
+
+Create a service pricinple in azure and use it in the pipeline 
+we can create a self hosted agent in VM scale set 
+
+------------------------------------------------------------------------------------
+service principle vs managed identity 
+
+No real user - may be application to upload the images - service principle - without a user 
+Azure tenant id , client id , client secret 
+create a app registration 
+add role assignment in AD after we create teh service principle 
+
+For a azure resource getting access to another resource , we use managed identity 
+system assigned and user assigned managed identity 
+
+Go to the VM , and select identity - and select system assigned managed identity 
+Go to the target resource , add the role assignment , and grant VM assigned managed identity 
+
+system assigned identity - it is tightly coupled with the VM 
+user assigned identity - it is independent of the resource life cycle 
+with user assigned identity we can associate it with multiple VM's
+
+user assigned , we are responsible for the life cycle management of the identity 
+------------------------------------------------------------------------------------
+Azure key vault 
+
+Azure key vault , we use to store secrets - like database connecton string or passwords 
+Centralized management - manage secrets , keys , certificate in one place 
+
+We can mention the vault url - "https://techdudesdemovault.vault.azure.net/" in the config file of the web api , 
+
+var keyVaultUri = builder.Configuration["KeyVault:VaultUri"]
+var secretClient = new SecretClient()
+builder.Services.AddSingleton(secretClient)
+
+public DatabaseController(SecretClient secreteClient)
+_secretClient.GetSecretAsync("DbConnectionString")
+
+Azure key vault - azure pipelines 
+
+we can also add a step in dev/ops to connect to azure key vault , thus giving the pipeline access to the secrets 
+$(connectionstring) - we can get it from key vault 
+
+
+------------------------------------------------------------------------------------------
+
+Powershell scripts is an easy way to accomplish the things , declare variables and add import command lets and use it for execution 
+
+
+------------------------------------------------------------------------------------------
+
+Micro services 
+ database per design pattern 
+-------------
+SAGA Pattern 
+ choreography
+ Orchestrator
+
+It is like a dance 
+In choreography , there is no central coordinator , each service publishes event and reacts to event from other services 
+Order service -> create order -> OrderCreated -> 
+Payment services -> OrderCreated -> publishes payment completed
+Inventory service -> listens to payment completed -> publishes stockreserved 
+
+If any sequence breaks , it publishes compensating commands 
+
+Orcehstration 
+In orchestration , a central orchestration service controls the workflow 
+Saga Orchestrator -> calls order service , create order -> calls payment service , charge card -> calls inventory service , reserve stock 
+
+choreography , few microservices , less complex scenarios , event driven architecture 
+orchestration , complex workflows , needs centralized control , need monitoring and retry logic 
+
+For simple event driven architecture , i would go with choreography , where as for complex scenarios , we will be going with the orchestration pattern 
+-----------------
+CQRS design pattern 
+Command and query segregation 
+
+product query service :  /GET  - FetchProducts
+product command service : /POST , /PUT ,/DELETE  
+
+example flipkar sale , during the sale days - searches are more and creates are less 
+
+separates writes from reads , independent scaling , mostly used for ecommerce 
+read side can have materialized views 
+data are synchronized based on teh event , write produces an event which is consumed by read
+write can be relational while reads can be elastic 
+
+-----------------
+Transaction outbox pattern 
+
+Solves the problem , when the data is to be written to the database and also published for the consumer to pick up the same message . Like data is committed to DB but publishing fail 
+In this pattern , data is written to the related table and also to the outbox table , and the data is synched by a separate background job , which picks up the data from the outbox table , and changes the sync status 
+
+-----------------
+
+Event sourcing design pattern 
+
+Instead of storing the final state , it stores the event , and final state is derived by deriving by replaying the events , it is mostly used for high audit API's
+
+Order created , confirmed , shipped n delivered 
+also like bankin , 200 deposited , 100 withdrawn , 300 deposited etc...
+
+better to use no-sql for scaling , they can also be stored in message broker like Kafka , event hub , Rabbit MQ etc
+----------------
+Aggregator pattern 
+
+Aggregator service - instead of the UI calling multiple services , and waiting , it can call an aggregator service , 
+The aggregator service in turn will call the services and aggregates information for UI consumption 
+
+Benefits , simplified UI , optimized performance (parallel api calls) , better resilience , security enhancements 
+---------------
+API Gateway - similar to API management - request comes to gateway and then it goes to user service , product service , order service , payment service 
+
+---------------
+
+Backend for Frontend (BFF)
+
+It is a custom API that sits in between , fronte end App and back end microservices . Instead of front end calling all the different microservices , it  makes a single call to the BFF service , the BFF structures and formats the response expected by the front end .
+
+----------------
+Circuit Breaker Pattern 
+
+To prevent cascading failure , this particular pattern is implemented , with out which , if the payment services is being called , and it does not give any response , without circuit breaker pattern , system would crash , with circuit breaker pattern , it would block the request , resulting in the system continue to work.
+
+.net polly 
+
+--------------------
+Strangular pattern 
+
+It is a design pattern used to gradually migrate or modernize legacy system by relacing parts of it with new services over time .
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SOLID principles 
+
+S - Single responsibility principle - it should have only one responsibility - ex Invoice calls - add invoice , delete invoice one method , 
+generate report and emailreport - should be a different class . generate report - part of report class , email report - part of email class 
+
+O - Open close principle - a class should be open for extenstion and closed for modification , 
+payment processor should be a class with virtual method - process payment
+creditcardpaymentprocess - can in herit from payment and override the abstract payment process method 
+paypalpaymentprocess - can inherit from payment and override the abstract payment process method 
+
+L - Liskov substitution principle - LSP is a concept that guarantees the smooth substitution of objects of derived classes for objects of their base classes . The objects of derived class should be interchangeable with the base class
+
+car , electric car inherits car : car has method as startengine and stopengine , which electric car may not need it .
+so car should interit interface : Vechile , IEnginePowered  , where as electric car inherits vechile only 
+
+vechicle car = new Car() & vechicel electricCar = new Electriccar()
+
+I - interface segregation principle - instead of haveing one interface with too many methods , segregate them to multiple interfaces , so that it is better to inherit only the interfaces , whose methods you want to implement and not all 
+
+
+D - Dependency inversion principle (DIP) - It is mostly talking about dependency injection , where the architecture is loosely coupled , high level modules depend on low level modules , but the not the reverse 
+
+UserController(IDataStorage dataStorage)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+MongoDB
+
+Favor embedding , unless there is a compelling reason not to 
+Need to access objects on its own , is a compelling reason not to embed it 
+Avoid joins and lookup if possible , 
+Arrays should not grow bound , if there are more than couple of hundred documents on many side don't embed them 
+
+index , single field index & multifield index (composite index)
+MongoDbCompass is used to connect to Atlas Mongo DB 
+multi key index , is used to index the values stored in an array 
+
+table is called collection in the mongo DB 
+
+mongodb is capable of scaling horizontally , with the sharding distributing large datasets across different data collection with  the help of shardkey 
+CAP Theorem (Conssitency , Avalilability , Parititio tolerance) - at a time only 2 are possible 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+clean architecture 
+
+
+-- what does configure method went off in .net core 
+-- what are different types of dependency injection 
+-- what is there in latest .net core app , start point 
+-- flow of the request with middleware 
 
