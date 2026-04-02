@@ -29,6 +29,15 @@ What is VPC
 
 ------------------------------------------------------------
 
+Helm ***
+direct deployment to dev , push to staging and prod , how to identify ***
+how do we monitor pods/nodes utilization ***
+taints & tolerants ***
+keyvault *** - do we need separate one's for each env
+
+Artifactory ?
+Azure DevOps
+
 
 Little more about helm charts - to avoid redundancy for deployment of each service
 How the Kubernetes deployed to AKS 
@@ -58,3 +67,7 @@ Authorization in micro service - Azure AD B2C
 
 Disaster recovery 
 Logic app in detail 
+
+--------------------------------------------------
+
+Resume 
