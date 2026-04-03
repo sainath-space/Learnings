@@ -20,13 +20,13 @@ rediness probe
 
 taint for node pool 
 template in yml
+to get into the current context of Kubernetes cluster 
 
+az aks get-credentials --resourcegroup --name
+---------------------------------------------------------
 ci/cd pipeline 
 -------------------------------------------------------------
-
-
 What is VPC 
-
 ------------------------------------------------------------
 
 Helm ***
@@ -34,10 +34,12 @@ direct deployment to dev , push to staging and prod , how to identify ***
 how do we monitor pods/nodes utilization ***
 taints & tolerants ***
 keyvault *** - do we need separate one's for each env
+AKS - deployment - helm 
 
+Azure CI vs CD example 
 Artifactory ?
 Azure DevOps
-
+Publish to nuget package in azure dev ops 
 
 Little more about helm charts - to avoid redundancy for deployment of each service
 How the Kubernetes deployed to AKS 
@@ -70,4 +72,9 @@ Logic app in detail
 
 --------------------------------------------------
 
-Resume 
+Cosco questions 
+
+How do you improve performance in microserices 
+How do you improve performance in SQL queries 
+
+
