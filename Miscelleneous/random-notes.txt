@@ -1,3 +1,62 @@
+
+best way to handle exceptions globally , is by using , app.UseExceptionHandler , in .Net8 on wards , and implement IExceptionHandler 
+-------------------------------------------
+200 Ok 
+201 Created 
+204 NoContent
+400 bad request 
+401 unauthorized - not authenticated
+403 forbidden - authorized wrong role
+404 not found 
+500 internal server error 
+503 service unavailable 
+
+
+-----------------------------------------------------------------------
+SOLID 
+
+Single Responsibility Principle : invoice class - add invoice , delete invoid - not generate report , send email 
+Open and close principle : A class should be open for extension and closed for modification - 
+ex payment processor - should not have credit card payment and paypal payment , istead it should have virtual process payment method , and credit caredprocessor and paypal processor 
+Dependency injection - loosely coupled architecture , higher level modules depend of lower level modules and not vice versa 
+Interface segregation - instead of having one interface to implement , have multiple interfaces , segregate the interface so that , we inherit only the required ones and not the others 
+liskovsubstitutionprinciple - base classes should be smoothly substituted by derived classes , 
+ex : car , electric car - inherit from vehich , which has methods common 
+vechicle = new care , vechicel = new electri car 
+
+---------------------------------------------------------------------------------
+micro services 
+
+data base per service design pattern 
+
+Sage pattern - choreo graphy , orchestration 
+
+choreography - event based 
+orchestration - there is an orchestrator in between which calls the intermeditery for calling the service 
+
+CQRS pattern - command and query design pattern - read and write data base are separated 
+examples e-commerce , purchases are less compared to searchers 
+
+another way - read and write commands are separated 
+
+transaction outbox pattern - Scenario's where we need write some data and then publish an event , scenario's if the messaging service is down , then there is no consistency , here we write the data to the outbox table , and job will pick up 
+
+event sourcing pattern - instead of directly saving the current state , events are stored 
+ex ecommerce : order created , payment done , order confirmed , order delivered
+
+aggregator pattern : suppose we have multiple 10/15 microservices , calling each service from UI would be difficult , so we have a a aggregator service, which makes multiple calls and aggregates the response to send to the UI 
+
+API gateway design pattern 
+
+BFF - backend for a front end 
+It is a custom API that sits in between frontend and backend micro services , instead of 
+
+circuit breaker pattern , this particular pattern is implemented , without which the entrire system will do down when , with circuit breaker pattern , it will block the request , but the system will continue to work .
+
+strangular pattern - breaking monolith to multiple micro services ,one by one and not all at once 
+
+Saga , CQRS , Event driven , Transaction outbox , aggregator , BFF , event source , circuit breaker pattern 
+--------------------------------------------------------------------------------------------------------------
 main.tf file 
 terraform provider - hashicorp
 terraform version
