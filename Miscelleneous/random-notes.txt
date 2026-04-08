@@ -1,3 +1,41 @@
+taint on nodes , key value:noschedule , toleraton key value noschedule 
+-------------------------------------------------
+
+terraform - providers.tf
+
+terraform { required providers { azurerm = { source= hashicorp/azurerm , version=3.0 }}}
+backend {azurerm  {resourcegroupname="" , storageaccountname= "" access_key }
+variable.tf - contains all the variables 
+dev.tfvars - contains all the vairables 
+
+resource "resourcetype" "resourcename" {
+ all parameters here 
+ name = var.action_group_name
+ short_name = var.short_name
+}
+
+serviceprinciple
+
+providers "azurerm" {
+tenant_id = "",
+subscription_id=""
+client_id="",
+client_secret =""
+}
+
+terraform init 
+terraform validate 
+terraform plan 
+terraform apply 
+
+terraform apply -var-file="dev.tfvars"
+
+--------------------------------------------
+to connect to the azure Kubernetes - we can use command 
+az aks get-credentials  --resource group name --cluster 
+kubectl get nodes , get pods , get svc 
+
+service , cluster ip - node port - load balancer 
 
 best way to handle exceptions globally , is by using , app.UseExceptionHandler , in .Net8 on wards , and implement IExceptionHandler 
 -------------------------------------------
