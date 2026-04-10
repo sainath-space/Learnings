@@ -1,4 +1,22 @@
+create procedure procedurename
+As
+Begin
+select * from employee
+End
+
+----------------------------------------------------
+create trigger triggername
+on table
+after insert 
+As
+Begin
+ insert into employeeaudit (employeenam,employeeid)
+ from inserted
+End
+
+-------------------------------------------
 taint on nodes , key value:noschedule , toleraton key value noschedule 
+node affinity , in Kubernetes is a way to control which nodes your pod should be scheduled on based on label on ndoes 
 -------------------------------------------------
 
 terraform - providers.tf
