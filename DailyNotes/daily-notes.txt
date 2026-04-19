@@ -1,3 +1,45 @@
+azure function time , different function types
+design patterns
+delegates 
+various example of task & async - 
+
+https://www.youtube.com/watch?v=2moh18sh5p4
+https://www.youtube.com/watch?v=_wy-W97stGk
+
+yield return 
+-------------------------------------------------------
+MSAL in Angular
+differene between with or without task for async method
+
+static method 
+
+
+------------------------------------------------------
+TDD 
+DDD
+
+
+
+Azure Application Gateway - Ingress
+-------------------------------------------------
+Hub & Spoke Model - done
+UDR's - done
+Azure DNS - done 
+Domain controller - done
+how does the domain is registered - done
+Log analytics workspace - management subscription - done
+Express route - done
+Azure DDos - done
+Backup / Site recovery - done 
+
+cloud adoption framework - done 
+
+----------------------------------------------
+
+availability set 
+backing up SQL instances 
+
+--------------------------------------------------
 API connectors ins user flow – azure ADB2C
 --------------------------------------------------
 GitHub action 
@@ -78,3 +120,9 @@ How do you improve performance in microserices
 How do you improve performance in SQL queries 
 
 AP10 AY7876
+
+
+-------------------------------------------------
+
+Congratulations!. Your response is submitted. Also apply to this job by visiting below and submit your updated CV
+Please share your updated CV if you have required experience and ok to work from Hyderabad to anil.akkaraveedu@wipro.comMention in subject - Your name - Total Exp - Application for Engineering Manager / Technical ManagerIn body mention - I am ok with Hyderabad locationShare your updated CV.

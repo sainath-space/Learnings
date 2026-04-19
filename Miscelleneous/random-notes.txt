@@ -1,9 +1,62 @@
-create procedure procedurename
-As
-Begin
-select * from employee
-End
+Task.WhenAll(task1,task2,task3)
+cancellation token 
+async , multiple calls await 
 
+we should not use .Result - it blocks the thread 
+why asyn improver performance in web APIs
+
+   Frees thread while waiting for (I/O)
+   Handles more requests
+   Improves scalability 
+
+do not return void for the async method 
+
+foreach parallel 
+----------------------------------------
+A sealed class is a mechanism used in object-oriented programming to restrict a class's inheritance hierarchy
+
+----------------------------------------
+protect - is accessible in the child classes 
+
+protected internal - is accessible in the child classes , other class within the same library 
+
+----------------------------------------
+helm install path where the chart.yml file is there 
+-----------------------------------------------------
+kubectl get pods 
+kubectl get nodes 
+
+kubectl apply -f pod.yml 
+kubectl apply -f deployment.yml 
+
+service is declared as yml file
+
+port , targetport , nodeport
+
+-----------------------------------------------------
+backend azurerm {
+ storageaccountname = ,
+ container_name = ,
+ key = "prod.terraform.tfstate"
+}
+
+terraform { required_providers azurerm = source hashicorp/azurerm version 3.0.2
+required_version 
+
+azurerm {tenanted , ClientID , clientsecret , subscriptionid}
+
+terraform init 
+terraform validate
+terraform plan 
+terraform apply 
+
+terraform destroy --auto-approve
+-----------------------------------------------------
+with table name as (select)
+
+select * from table 
+
+view is a virtual table 
 ----------------------------------------------------
 create trigger triggername
 on table
