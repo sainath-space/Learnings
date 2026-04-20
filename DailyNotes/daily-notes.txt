@@ -1,3 +1,8 @@
+durable functions 
+event hub & event grid 
+
+RAG , AI Agent , Agentic AI - Scaler
+-----------------------------------
 azure function time , different function types
 design patterns
 delegates 
@@ -7,7 +12,7 @@ https://www.youtube.com/watch?v=2moh18sh5p4
 https://www.youtube.com/watch?v=_wy-W97stGk
 
 yield return 
-event hub & event grid 
+
 -------------------------------------------------------
 MSAL in Angular
 difference between with or without task for async method
