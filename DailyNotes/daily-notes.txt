@@ -7,9 +7,10 @@ https://www.youtube.com/watch?v=2moh18sh5p4
 https://www.youtube.com/watch?v=_wy-W97stGk
 
 yield return 
+event hub & event grid 
 -------------------------------------------------------
 MSAL in Angular
-differene between with or without task for async method
+difference between with or without task for async method
 
 static method 
 

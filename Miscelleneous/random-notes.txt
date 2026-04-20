@@ -1,3 +1,11 @@
+type of trigger - http trigger , timer trigger (cron job) , queue trigger , service bus trigger , blob trigger , event hub - event grid trigger 
+
+plan - consumption plan , premium plan , dedicated plan 
+types of execution - stateless & durable functions 
+
+durable function - orchestrator , activity , entity 
+Durable function 
+--------------------------------------------------
 Task.WhenAll(task1,task2,task3)
 cancellation token 
 async , multiple calls await 
@@ -12,15 +20,15 @@ why asyn improver performance in web APIs
 do not return void for the async method 
 
 foreach parallel 
-----------------------------------------
+----------------------------------------------------
 A sealed class is a mechanism used in object-oriented programming to restrict a class's inheritance hierarchy
 
-----------------------------------------
+----------------------------------------------------
 protect - is accessible in the child classes 
 
 protected internal - is accessible in the child classes , other class within the same library 
 
-----------------------------------------
+-----------------------------------------------------
 helm install path where the chart.yml file is there 
 -----------------------------------------------------
 kubectl get pods 
