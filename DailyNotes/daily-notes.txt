@@ -1,7 +1,11 @@
 durable functions 
 event hub & event grid 
 
-RAG , AI Agent , Agentic AI - Scaler
+order of processing in Azure service bus 
+locally redundant , geo redundant , zone redundant , geo zone redundant 
+
+RAG , AI Agent , Agentic AI - Scaler , DevSecOps
+DevOps - code coverage , static code analysis , automated tests - unit & UI ?
 -----------------------------------
 azure function time , different function types
 design patterns
