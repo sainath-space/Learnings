@@ -1,3 +1,5 @@
+
+--------------------------------------------------
 type of trigger - http trigger , timer trigger (cron job) , queue trigger , service bus trigger , blob trigger , event hub - event grid trigger 
 
 plan - consumption plan , premium plan , dedicated plan 

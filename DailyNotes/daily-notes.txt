@@ -1,3 +1,24 @@
+authenticating with Angular UI & Azure AD B2C
+how caching can help in ticketing system 
+user authentication using gmail/jwt 
+handle stock reservations 
+authentication in Azure AD B2c 
+
+search for e-commerce - db 
+cachin in e-commerce
+
+Inventory consistency – prevent overselling during flash sales  - distributed logs , transaction consistency 
+geo redundancy 
+-----------------------------------
+questions on testing 
+Enforce testing strategy
+utilization of a person 
+
+whitebox & blackbox testing 
+-----------------------------------
+
+GenAI , RAG , agentic AI   apply to real delivery environments 
+-----------------------------------
 durable functions 
 event hub & event grid 
 
