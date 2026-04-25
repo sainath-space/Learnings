@@ -1,14 +1,19 @@
-authenticating with Angular UI & Azure AD B2C
-how caching can help in ticketing system 
-user authentication using gmail/jwt 
-handle stock reservations 
-authentication in Azure AD B2c 
+CI/CD terraform
+Azure AD - federated identity
 
-search for e-commerce - db 
-cachin in e-commerce
+different blobs and strategies - table etc
+----------------------------------
+mongo db driver - done
+Mongo db questions - Atlast DB - done
+Diagram draw.io - done 
 
-Inventory consistency – prevent overselling during flash sales  - distributed logs , transaction consistency 
-geo redundancy 
+----------------------------------
+authenticating with Angular UI & Azure AD B2C - done
+how caching can help in ticketing system - done
+handle stock reservations - done
+geo redundancy - done
+service principle - done 
+
 -----------------------------------
 questions on testing 
 Enforce testing strategy
