@@ -1,4 +1,4 @@
-CI/CD terraform
+CI/CD terraform - done
 Azure AD - federated identity
 
 different blobs and strategies - table etc
