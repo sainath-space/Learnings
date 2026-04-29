@@ -1,3 +1,11 @@
+Masstransit 
+Agentic AI - https://www.youtube.com/watch?v=15_pppse4fY&t=54s
+
+replicas in SQL databases 
+
+Product design - end to end - how it starts 
+Global load balancing - 
+----------------------------------
 CI/CD terraform - done
 Azure AD - federated identity
 
